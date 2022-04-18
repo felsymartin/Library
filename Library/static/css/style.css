@@ -198,13 +198,14 @@ nav.main-menu {
 
 .navbar-light .navbar-nav .nav-link {
     color: #060608;
-    font-size: 16pt;
-    padding-top: 30px;
+    font-size: 4pt;
+    padding-top: 20px;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 0.8rem;
     padding-left: .7rem;
+    font-size: small;
 }
 
 .navbar-light .navbar-toggler {
@@ -223,7 +224,7 @@ nav.main-menu {
 .banner_section{ 
      width: 100%; 
      float: left;
-     background-image: url(../images/banner.png);
+     background-image: url(..asset/images/banner1.jpg);
      height: auto;  
      background-size: 100%;
      background-repeat: no-repeat;
@@ -459,7 +460,7 @@ nav.main-menu {
     font-size: 44pt;
     text-align: center;
     color: #ffffff;
-    border-bottom: 4px solid#4bc714;
+    border-bottom: 4px solid #4bc714;
 }
 
 .lorem_text{
@@ -594,7 +595,7 @@ nav.main-menu {
      float: left;
      font-size: 24pt;
      color: #ffffff;
-     border-bottom: 4px solid#3e7f21;
+     border-bottom: 4px solid #3e7f21;
      margin-bottom: 26px;
 }
 
@@ -615,7 +616,7 @@ nav.main-menu {
      float: left;
      font-size: 24pt;
      color: #ffffff;
-     border-bottom: 4px solid#3e7f21;
+     border-bottom: 4px solid #3e7f21;
      margin-bottom: 26px;
 }
 
