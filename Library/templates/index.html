@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 {% load static %}
+<!-- Going to call assets/img/portfolio/ as imgurl -->
+{% static "assets/img/portfolio/" as imgurl %}
+
 <html lang="en">
 <head>
 <!-- basic -->
@@ -134,34 +137,16 @@
 			<h1 class="promoted_text">PROMOTED <span style="border-bottom: 5px solid #4bc714;">BOOKS</span></h1>
 			<div class="images_main">
 				<div class="row">
+					{% for data in Pro %}
 					<div class="col-sm-6 col-md-6 col-lg-3">
-						<div class="images"><img src="{% static 'asset/images/img1.png' %}" style="width: 100%;"></div>
+						<div class="images"><img src="{{data.image.url}}" style="width: 100%;"></div>
 						<button class="promoted_bt">PROMOTED</button>
 						<div class="eye-icon"><img src="{% static 'asset/images/eye-icon.png' %}"><span class="like-icon"><img src="{% static 'asset/images/like-icon.png' %}"></span></div>
 						<div class="numbar_text">30<span class="like-icon">01</span></div>
-						<button class="mobile_bt"><a href="{% url 'bookdetails' %}">Aadujeevitham</a></button>
+						<button class="mobile_bt"><a href="{% url 'bookdetails' %}">{{data.name}}</a></button>
 					</div>
-					<div class="col-sm-6 col-md-6 col-lg-3">
-						<div class="images"><img src="{% static 'asset/images/img2.png' %}" style="width: 100%;"></div>
-						<button class="promoted_bt">PROMOTED</button>
-						<div class="eye-icon"><img src="{% static 'asset/images/eye-icon.png' %}"><span class="like-icon"><img src="{% static 'images/like-icon.png' %}"></span></div>
-						<div class="numbar_text">30<span class="like-icon">01</span></div>
-						<button class="mobile_bt"><a href="#">Cyicals</a></button>
-					</div>
-					<div class="col-sm-6 col-md-6 col-lg-3">
-						<div class="images"><img src="{% static 'asset/images/img3.png' %}" style="width: 100%;"></div>
-						<button class="promoted_bt">PROMOTED</button>
-						<div class="eye-icon"><img src="{% static 'images/eye-icon.png' %}"><span class="like-icon"><img src="{% static 'images/like-icon.png' %}"></span></div>
-						<div class="numbar_text">30<span class="like-icon">01</span></div>
-						<button class="mobile_bt"><a href="#">Cars</a></button>
-					</div>
-					<div class="col-sm-6 col-md-6 col-lg-3">
-						<div class="images"><img src="{% static 'asset/images/img4.png' %}" style="width: 100%;"></div>
-						<button class="promoted_bt">PROMOTED</button>
-						<div class="eye-icon"><img src="{% static 'images/eye-icon.png' %}"><span class="like-icon"><img src="{% static 'images/like-icon.png' %}"></span></div>
-						<div class="numbar_text">30<span class="like-icon">01</span></div>
-						<button class="mobile_bt"><a href="#">Laptops</a></button>
-					</div>
+					
+					{% endfor %}
 				</div>
 			</div>
 			
