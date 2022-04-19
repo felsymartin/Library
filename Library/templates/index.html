@@ -100,11 +100,7 @@
                         <input type="text" class="email_boton" placeholder="Search for" name="Email">
                     </div>
 				</div>
-				<div class="col-sm-3">
-					<div class="form-group">
-                        <input type="text" class="email_boton" placeholder="Loction in" name="Email">
-                    </div>
-				</div>
+				
 				<div class="col-sm-3">
 					<div class="form-group">
                         <input type="text" class="email_boton" placeholder="category" name="Email">
@@ -116,15 +112,12 @@
                     </div>
 				</div>
 				<div class="fashion_menu">
-                    	<ul>
-                    		<li class="active"><a href="#">Auto Mobile</a></li>
-                    		<li><a href="#">Fashion</a></li>
-                    		<li><a href="#">Mother& Child</a></li>
-                    		<li><a href="#">Jobs</a></li>
-                    		<li><a href="#">Real estate</a></li>
-                    		<li><a href="#">Pets</a></li>
-                    		<li><a href="#">Sport</a></li>
-                    		<li><a href="#">More</a></li>
+                    	<ul>                    		
+                    		<li><a href="#">Fiction</a></li>
+                    		<li><a href="#">Novel</a></li>
+                    		<li><a href="#">Malayalam</a></li>
+                    		<li><a href="#">English</a></li>
+                    		
                     	</ul>
                     </div>
 			</div>
@@ -143,7 +136,8 @@
 						<button class="promoted_bt">PROMOTED</button>
 						<div class="eye-icon"><img src="{% static 'asset/images/eye-icon.png' %}"><span class="like-icon"><img src="{% static 'asset/images/like-icon.png' %}"></span></div>
 						<div class="numbar_text">30<span class="like-icon">01</span></div>
-						<button class="mobile_bt"><a href="{% url 'bookdetails' %}">{{data.name}}</a></button>
+						
+						<button class="mobile_bt"><a href="{% url 'session' data.id %}">{{data.name}}</a></button>
 					</div>
 					
 					{% endfor %}
@@ -156,6 +150,7 @@
 	<!-- section POPULAR STORES start -->
     <div class="layout_padding popular_section">
     	<div class="container">
+			
     		<h1 class="popular_taital">POPULAR <span style="border-bottom: 5px solid #4bc714;">BOOKS</span></h1>
     		<div id="main_slider" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -186,6 +181,7 @@
                     <button class="view_bt"><a href="#">VIEW ADS</a></button>
     		    </div>
             </div>
+			
         </div>
         <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
             <i class="fa fa-angle-left"></i>
