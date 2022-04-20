@@ -66,11 +66,13 @@
                     </div>
                     </nav>					
 				</div>
-
-				<div class="col-sm-6 col-lg-3">					
+				
+				<div class="col-sm-6 col-lg-3">	
+					{% if user.is_authenticated %}				
 					<div class="search_main">					
-                    <button class="submit_bt"><a href="#"><span class="doctor"><img src="{% static 'asset/images/doctor-icon.png' %}"></span>Submit ads</a></button>
+                    <button class="submit_bt"><a href="admin/"><span class="doctor"><img src="{% static 'asset/images/doctor-icon.png' %}"></span>Submit ads</a></button>
 				    </div>
+					{% endif %}
 				</div>
 			</div>
 		</div>
@@ -93,24 +95,19 @@
 	<!-- banner section end -->
 	<!-- search box start -->
 	<div class="container">
-		<div class="search_box">
+		<div class="search_box" >
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="form-group">
-                        <input type="text" class="email_boton" placeholder="Search for" name="Email">
+						<form action="search" method="get" name="searchbook">
+							<input type="text" class="email_boton" placeholder="Book Name" name="name">
+							<button class="search_bt" onclick="document.searchbook.submit()">Search</button>
+						</form>
+                        
                     </div>
-				</div>
+				</div>						
+					
 				
-				<div class="col-sm-3">
-					<div class="form-group">
-                        <input type="text" class="email_boton" placeholder="category" name="Email">
-                    </div>
-				</div>
-				<div class="col-sm-3">
-					<div class="form-group">
-                        <button class="search_bt">Search</button>
-                    </div>
-				</div>
 				<div class="fashion_menu">
                     	<ul>                    		
                     		<li><a href="#">Fiction</a></li>
