@@ -11,13 +11,14 @@ def index(request):
     return render(request,'index.html',{'Pro':prolist})
 
 def search(request):
-    if 'search' in request.GET:
-        search = request.GET['search']
-        data = books.objects.filter(name=search)
-    else:
-        data = books.objects.all()
+    
+    search = request.GET['name']
+    data = books.objects.filter(name__istartswith=search)
+    print(data)
+    
+    
     context = {
-            'data' : data
+            'Pro' : data
         }
     return render (request,'index.html', context)
 

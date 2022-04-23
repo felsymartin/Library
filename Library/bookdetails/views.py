@@ -26,7 +26,7 @@ def session(request,pageid):
             request.session['recent_view'].pop()
 
     else:
-        previous = [1]
+        previous = [pageid]
         request.session['recent_view'] = [pageid]
     request.session.modified = True
     print("Show Id",request.session['recent_view'])
