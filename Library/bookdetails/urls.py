@@ -4,5 +4,6 @@ from . import views
 urlpatterns = [
     # path('',views.bookdetails, name='bookdetails'),
     path('<int:pageid>/',views.session, name='session'),
+    path('comment/',views.commenttext, name='commenttext'),
     
 ]

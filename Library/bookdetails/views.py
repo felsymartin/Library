@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import books
+from django.shortcuts import render,redirect
+from .models import books,comment
 
 # Create your views here.
 
@@ -32,3 +32,15 @@ def session(request,pageid):
     print("Show Id",request.session['recent_view'])
 
     return render(request,'bdetails.html',{'bookid':obj_id,'prev':previous})
+
+def commenttext(request):
+    text = request.GET['txt']
+    pro_id = request.GET['bookid']
+    username = request.GET['username']
+    obj_id = books.objects.get(id=pro_id)
+
+    cmt = comment.objects.create (name = username, book = obj_id, body = text)
+    cmt.save();
+
+    #return render(request,'bdetails.html',{'bookid':obj_id})
+    return redirect('/details/'+pro_id)
